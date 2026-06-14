@@ -31,7 +31,10 @@ public class JwtFilter {
                                 .requestMatchers(
                                         "/auth/register",
                                         "/auth/login",
-                                        "/role/**"
+                                        "/role/**",
+                                        "/swagger-ui/**",
+                                        "/swagger-ui.html",
+                                        "/v3/api-docs/**"
                                 )
                                 .permitAll()
                                 .requestMatchers("/admin/**")

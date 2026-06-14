@@ -4,6 +4,7 @@ import com.pharma.auth_service.DTO.LoginRequest;
 import com.pharma.auth_service.DTO.RegisterRequest;
 import com.pharma.auth_service.JWT.Service.JwtService;
 import com.pharma.auth_service.Service.AuthService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -22,14 +23,19 @@ public class AuthController {
 
     // Register User
     @PostMapping("/register")
-    public String register(@RequestBody RegisterRequest request){
+    public String register(
+            @Valid
+            @RequestBody RegisterRequest request){
 
         return authService.register(request);
     }
 
     // Login User
     @PostMapping("/login")
-    public String login(@RequestBody LoginRequest request){
+    public String login(
+
+            @Valid
+            @RequestBody LoginRequest request){
 
         return authService.login(request);
     }
