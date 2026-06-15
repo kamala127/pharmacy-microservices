@@ -1,6 +1,6 @@
 package com.pharma.auth_service.Service;
 
-import com.pharma.auth_service.DTO.AddRoleRequest;
+import com.pharma.auth_service.DTO.Request.AddRoleRequest;
 import com.pharma.auth_service.Entity.Role;
 import com.pharma.auth_service.Repository.RoleRepository;
 import lombok.RequiredArgsConstructor;
@@ -31,10 +31,16 @@ public class RoleService {
 
     // Update Role
     public String updateRole(Long id, AddRoleRequest request) throws RoleNotFoundException {
-        Role role = roleRepository.findById(id).orElseThrow(()-> new RoleNotFoundException("Id Not Found"));
+        Role role = findById(id);
         role.setRoleName(request.roleName());
         roleRepository.save(role);
         return "Role Name Updated";
+    }
+
+    // Refactor Methods
+
+    public Role findById(Long id) throws RoleNotFoundException {
+        return roleRepository.findById(id).orElseThrow(()->new RoleNotFoundException("Id not Found"));
     }
 
 }

@@ -1,4 +1,4 @@
-package com.pharma.auth_service.DTO;
+package com.pharma.auth_service.DTO.Response;
 
 import java.time.LocalDateTime;
 

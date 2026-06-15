@@ -1,6 +1,6 @@
 package com.pharma.auth_service.Controller;
 
-import com.pharma.auth_service.DTO.AddRoleRequest;
+import com.pharma.auth_service.DTO.Request.AddRoleRequest;
 import com.pharma.auth_service.Entity.Role;
 import com.pharma.auth_service.Service.RoleService;
 import lombok.AllArgsConstructor;

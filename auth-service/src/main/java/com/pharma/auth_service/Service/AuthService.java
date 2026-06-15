@@ -1,37 +1,40 @@
 package com.pharma.auth_service.Service;
 
-import com.pharma.auth_service.DTO.LoginRequest;
-import com.pharma.auth_service.DTO.RegisterRequest;
+import com.pharma.auth_service.Controller.AuthController;
+import com.pharma.auth_service.DTO.Request.LoginRequest;
+import com.pharma.auth_service.DTO.Request.RegisterRequest;
 import com.pharma.auth_service.Entity.Role;
 import com.pharma.auth_service.Entity.User;
 import com.pharma.auth_service.JWT.Service.JwtService;
 import com.pharma.auth_service.Repository.RoleRepository;
 import com.pharma.auth_service.Repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.context.annotation.Bean;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.UUID;
+import javax.management.relation.RoleNotFoundException;
 
 @Service
 @RequiredArgsConstructor
 public class AuthService {
 
     private final UserRepository userRepository;
-    private final RoleRepository roleRepository;
     private final PasswordEncoder passwordEncoder;
     private final AuthenticationManager authenticationManager;
     private final JwtService jwtService;
+    private final RoleService roleService;
+    private static final Logger log =
+            LoggerFactory.getLogger(AuthService.class);
 
 
     // Register User Service
-   public String register(RegisterRequest request){
+   public String register(RegisterRequest request) throws RoleNotFoundException {
 
-       Role role = roleRepository.findById(request.roleId()).orElseThrow();
+       Role role = roleService.findById(request.roleId());
 
        User u = new User();
        u.setName(request.name());
@@ -39,6 +42,7 @@ public class AuthService {
        u.setPassword(passwordEncoder.encode(request.password()));
        u.setRole(role);
        userRepository.save(u);
+       log.info("User Registered Successfully");
        return "User Registered Successfully";
    }
 

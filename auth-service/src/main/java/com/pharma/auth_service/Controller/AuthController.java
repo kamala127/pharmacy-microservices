@@ -1,7 +1,6 @@
 package com.pharma.auth_service.Controller;
 
-import com.pharma.auth_service.DTO.LoginRequest;
-import com.pharma.auth_service.DTO.RegisterRequest;
+import com.pharma.auth_service.DTO.Request.*;
 import com.pharma.auth_service.JWT.Service.JwtService;
 import com.pharma.auth_service.Service.AuthService;
 import jakarta.validation.Valid;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.management.relation.RoleNotFoundException;
 
 @RestController
 @RequestMapping("/auth")
@@ -25,7 +26,7 @@ public class AuthController {
     @PostMapping("/register")
     public String register(
             @Valid
-            @RequestBody RegisterRequest request){
+            @RequestBody RegisterRequest request) throws RoleNotFoundException {
 
         return authService.register(request);
     }

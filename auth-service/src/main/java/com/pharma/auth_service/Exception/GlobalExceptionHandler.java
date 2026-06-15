@@ -1,6 +1,6 @@
 package com.pharma.auth_service.Exception;
 
-import com.pharma.auth_service.DTO.ErrorResponse;
+import com.pharma.auth_service.DTO.Response.ErrorResponse;
 import com.pharma.auth_service.Exception.CustomException.UserAlreadyExistsException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;

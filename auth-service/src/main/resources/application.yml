@@ -6,6 +6,7 @@ spring:
     url: jdbc:mysql://localhost:3307/pharmacy_db
     username: app
     password: app
+
   jpa:
     hibernate:
       ddl-auto: update
@@ -13,3 +14,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
+jwt:
+  secret: TXlTdXBlclNlY3JldEtleUZvckpXVFRva2VuR2VuZXJhdGlvbjEyMzQ1Njc4OTA=
+  expiration: 86400000
