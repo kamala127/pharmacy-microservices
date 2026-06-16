@@ -1,0 +1,19 @@
+server:
+  port: 8082
+
+spring:
+  application:
+    name: medicine-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/pharma_medicine_db
+    username: app
+    password: app
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
