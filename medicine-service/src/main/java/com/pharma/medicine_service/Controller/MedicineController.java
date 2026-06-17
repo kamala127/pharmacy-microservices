@@ -2,6 +2,7 @@ package com.pharma.medicine_service.Controller;
 
 import com.pharma.medicine_service.DTO.Request.MedicineRequest;
 import com.pharma.medicine_service.DTO.Response.MedicineResponse;
+import com.pharma.medicine_service.DTO.Response.PageResponse;
 import com.pharma.medicine_service.Service.MedicineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
@@ -62,5 +63,57 @@ public class MedicineController {
         medicineService.deleteMedicine(id);
 
         return ResponseEntity.noContent().build();
+    }
+
+    @GetMapping("/page")
+    public ResponseEntity<PageResponse<MedicineResponse>>
+    getAllMedicines(
+            @RequestParam(defaultValue = "0")
+            int page,
+
+            @RequestParam(defaultValue = "5")
+            int size,
+
+            @RequestParam(defaultValue = "medicineName")
+            String sortBy,
+
+            @RequestParam(defaultValue = "asc")
+            String direction) {
+
+        return ResponseEntity.ok(
+                medicineService.getAllMedicines(
+                        page,
+                        size,
+                        sortBy,
+                        direction));
+    }
+
+
+    @GetMapping("/search")
+    public ResponseEntity<List<MedicineResponse>>
+    searchMedicine(
+            @RequestParam String keyword) {
+
+        return ResponseEntity.ok(
+                medicineService.searchMedicine(keyword));
+    }
+
+    @GetMapping("/category/{category}")
+    public ResponseEntity<List<MedicineResponse>>
+    getByCategory(
+            @PathVariable String category) {
+
+        return ResponseEntity.ok(
+                medicineService.getMedicinesByCategory(
+                        category));
+    }
+    @GetMapping("/manufacturer/{manufacturer}")
+    public ResponseEntity<List<MedicineResponse>>
+    getByManufacturer(
+            @PathVariable String manufacturer) {
+
+        return ResponseEntity.ok(
+                medicineService.getMedicinesByManufacturer(
+                        manufacturer));
     }
 }
