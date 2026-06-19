@@ -6,6 +6,8 @@ import com.pharma.medicine_service.DTO.Response.PageResponse;
 import com.pharma.medicine_service.Service.MedicineService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +22,7 @@ public class MedicineController {
     private final MedicineService medicineService;
 
     @PostMapping("/add")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<MedicineResponse> addMedicine(
             @Valid
             @RequestBody MedicineRequest medicineRequest){
@@ -30,6 +33,7 @@ public class MedicineController {
     }
 
     @GetMapping("/{id}")
+    @PreAuthorize("hasAnyRole('ADMIN','SUPPLIER','PHARMACY')")
     public ResponseEntity<MedicineResponse>
     getMedicineById(@PathVariable Long id) {
 
@@ -38,6 +42,7 @@ public class MedicineController {
     }
 
     @GetMapping
+    @PreAuthorize("hasAnyRole('ADMIN','SUPPLIER','PHARMACY')")
     public ResponseEntity<List<MedicineResponse>>
     getAllMedicines() {
 
@@ -46,6 +51,7 @@ public class MedicineController {
     }
 
     @PutMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<MedicineResponse>
     updateMedicine(
             @PathVariable Long id,
@@ -57,6 +63,7 @@ public class MedicineController {
     }
 
     @DeleteMapping("/{id}")
+    @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<Void>
     deleteMedicine(@PathVariable Long id) {
 
@@ -66,6 +73,7 @@ public class MedicineController {
     }
 
     @GetMapping("/page")
+    @PreAuthorize("hasAnyRole('ADMIN','SUPPLIER','PHARMACY')")
     public ResponseEntity<PageResponse<MedicineResponse>>
     getAllMedicines(
             @RequestParam(defaultValue = "0")
@@ -90,6 +98,7 @@ public class MedicineController {
 
 
     @GetMapping("/search")
+    @PreAuthorize("hasAnyRole('ADMIN','SUPPLIER','PHARMACY')")
     public ResponseEntity<List<MedicineResponse>>
     searchMedicine(
             @RequestParam String keyword) {
@@ -99,6 +108,7 @@ public class MedicineController {
     }
 
     @GetMapping("/category/{category}")
+    @PreAuthorize("hasAnyRole('ADMIN','SUPPLIER','PHARMACY')")
     public ResponseEntity<List<MedicineResponse>>
     getByCategory(
             @PathVariable String category) {
@@ -115,5 +125,17 @@ public class MedicineController {
         return ResponseEntity.ok(
                 medicineService.getMedicinesByManufacturer(
                         manufacturer));
+    }
+
+    @GetMapping("/whoami")
+    public String whoAmI(Authentication authentication) {
+
+        if (authentication == null) {
+            return "Authentication is NULL";
+        }
+
+        return authentication.getName()
+                + " -> "
+                + authentication.getAuthorities();
     }
 }

@@ -23,9 +23,7 @@ public record MedicineRequest(
         @Positive
         BigDecimal price,
 
-        @NotNull
-        @PositiveOrZero
-        Integer stockQuantity,
+        InventoryRequest  inventory,
 
         @NotNull
         LocalDate expiryDate

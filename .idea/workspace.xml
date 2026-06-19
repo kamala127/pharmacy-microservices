@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="716b6083-2d29-4a74-896b-3e65779da41a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/PageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/InventoryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/InventoryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/JwtService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Repository/InventoryRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/JWT/Service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/JWT/Service/JwtService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Controller/MedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Controller/MedicineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Repository/MedicineRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Repository/MedicineRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/MedicineRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/MedicineRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/MedicineResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/MedicineResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Medicine.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/Impl/MedicineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/Impl/MedicineServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/MedicineService.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/MedicineService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +31,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Record" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -45,6 +57,9 @@
   &quot;associatedIndex&quot;: 0
 }</component>
   <component name="ProjectId" id="3FCKrOtqu0YwcuxRDVDAxuADD2d" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

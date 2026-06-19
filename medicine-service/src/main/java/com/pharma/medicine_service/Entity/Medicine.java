@@ -30,7 +30,12 @@ public class Medicine {
 
     private BigDecimal price;
 
-    private Integer stockQuantity;
+    @OneToOne(
+            cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY
+    )
+    @JoinColumn(name="inventory_id")
+    private Inventory inventory;
 
     private LocalDate expiryDate;
 

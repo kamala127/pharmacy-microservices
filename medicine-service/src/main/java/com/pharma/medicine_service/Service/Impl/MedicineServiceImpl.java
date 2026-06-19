@@ -1,8 +1,10 @@
 package com.pharma.medicine_service.Service.Impl;
 
 import com.pharma.medicine_service.DTO.Request.MedicineRequest;
+import com.pharma.medicine_service.DTO.Response.InventoryResponse;
 import com.pharma.medicine_service.DTO.Response.MedicineResponse;
 import com.pharma.medicine_service.DTO.Response.PageResponse;
+import com.pharma.medicine_service.Entity.Inventory;
 import com.pharma.medicine_service.Entity.Medicine;
 import com.pharma.medicine_service.Exception.MedicineNotFoundException;
 import com.pharma.medicine_service.Repository.MedicineRepository;
@@ -30,6 +32,20 @@ public class MedicineServiceImpl implements MedicineService {
     public MedicineResponse addMedicine(
             MedicineRequest request) {
 
+        Inventory inventory =
+                Inventory.builder()
+                        .quantityAvailable(
+                                request.inventory()
+                                        .getQuantityAvailable())
+                        .reorderLevel(
+                                request.inventory()
+                                        .getReorderLevel())
+                        .warehouseLocation(
+                                request.inventory()
+                                        .getWarehouseLocation())
+                        .lastUpdated(
+                                LocalDateTime.now())
+                        .build();
         Medicine medicine =
                 Medicine.builder()
                         .medicineName(
@@ -39,8 +55,8 @@ public class MedicineServiceImpl implements MedicineService {
                         .category(
                                 request.category())
                         .price(request.price())
-                        .stockQuantity(
-                                request.stockQuantity())
+                        .inventory(
+                                inventory)
                         .expiryDate(
                                 request.expiryDate())
                         .createdAt(
@@ -86,6 +102,10 @@ public class MedicineServiceImpl implements MedicineService {
             Long id,
             MedicineRequest request) {
 
+
+
+
+
         Medicine medicine =
                 repository.findById(id)
                         .orElseThrow(() ->
@@ -104,11 +124,26 @@ public class MedicineServiceImpl implements MedicineService {
         medicine.setPrice(
                 request.price());
 
-        medicine.setStockQuantity(
-                request.stockQuantity());
-
         medicine.setExpiryDate(
                 request.expiryDate());
+
+        Inventory inventory =
+                medicine.getInventory();
+
+        inventory.setQuantityAvailable(
+                request.inventory()
+                        .getQuantityAvailable());
+
+        inventory.setReorderLevel(
+                request.inventory()
+                        .getReorderLevel());
+
+        inventory.setWarehouseLocation(
+                request.inventory()
+                        .getWarehouseLocation());
+
+        inventory.setLastUpdated(
+                LocalDateTime.now());
 
         Medicine updated =
                 repository.save(medicine);
@@ -135,15 +170,28 @@ public class MedicineServiceImpl implements MedicineService {
     private MedicineResponse
     mapToResponse(Medicine medicine) {
 
+        InventoryResponse inventoryResponse =
+                new InventoryResponse(
+                        medicine.getInventory().getId(),
+                        medicine.getInventory()
+                                .getQuantityAvailable(),
+                        medicine.getInventory()
+                                .getReorderLevel(),
+                        medicine.getInventory()
+                                .getWarehouseLocation(),
+                        medicine.getInventory()
+                                .getLastUpdated()
+                );
+
         return new MedicineResponse(
-                medicine.getId(),
-                medicine.getMedicineName(),
-                medicine.getManufacturer(),
-                medicine.getCategory(),
-                medicine.getPrice(),
-                medicine.getStockQuantity(),
+                        medicine.getId(),
+                        medicine.getMedicineName(),
+                        medicine.getManufacturer(),
+                        medicine.getCategory(),
+                        medicine.getPrice(),
+                inventoryResponse,
                 medicine.getExpiryDate()
-        );
+                );
     }
 
     @Override

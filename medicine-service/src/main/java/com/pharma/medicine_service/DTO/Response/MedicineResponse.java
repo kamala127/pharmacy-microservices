@@ -10,7 +10,7 @@ public record MedicineResponse(
         String manufacturer,
         String category,
         BigDecimal price,
-        Integer stockQuantity,
+        InventoryResponse inventory,
         LocalDate expiryDate
 ) {
 }
