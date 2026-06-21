@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="api-gateway" />
+        <module name="pharma-discovery-server" />
       </profile>
       <profile name="Annotation profile for medicine-service" enabled="true">
         <sourceOutputDir name="target/generated-sources/annotations" />
@@ -18,6 +19,7 @@
         </processorPath>
         <module name="medicine-service" />
         <module name="auth-service" />
+        <module name="inventory-service" />
       </profile>
     </annotationProcessing>
   </component>
@@ -25,7 +27,9 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="api-gateway" options="-parameters" />
       <module name="auth-service" options="-parameters" />
+      <module name="inventory-service" options="-parameters" />
       <module name="medicine-service" options="-parameters" />
+      <module name="pharma-discovery-server" options="-parameters" />
     </option>
   </component>
 </project>

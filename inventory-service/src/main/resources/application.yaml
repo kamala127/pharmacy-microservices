@@ -1,12 +1,12 @@
 server:
-  port: 8082
+  port: 8083
 
 spring:
   application:
-    name: medicine-service
+    name: inventory-service
 
   datasource:
-    url: jdbc:mysql://localhost:3307/pharma_medicine_db
+    url: jdbc:mysql://localhost:3307/pharma_inventory_db
     username: app
     password: app
 
@@ -17,6 +17,7 @@ spring:
     properties:
       hibernate:
         format_sql: true
+
 eureka:
   instance:
     hostname: localhost
@@ -25,7 +26,6 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:8761/eureka/
-
 jwt:
   secret: TXlTdXBlclNlY3JldEtleUZvckpXVFRva2VuR2VuZXJhdGlvbjEyMzQ1Njc4OTA=
   expiration: 86400000

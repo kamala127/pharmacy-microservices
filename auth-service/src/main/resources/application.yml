@@ -2,6 +2,9 @@ server:
   port: 8081
 
 spring:
+  application:
+    name: auth-service
+
   datasource:
     url: jdbc:mysql://localhost:3307/pharmacy_db
     username: app
@@ -14,7 +17,14 @@ spring:
     properties:
       hibernate:
         format_sql: true
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
 
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
 jwt:
   secret: TXlTdXBlclNlY3JldEtleUZvckpXVFRva2VuR2VuZXJhdGlvbjEyMzQ1Njc4OTA=
   expiration: 86400000

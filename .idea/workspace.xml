@@ -4,38 +4,35 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="716b6083-2d29-4a74-896b-3e65779da41a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/InventoryRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/InventoryResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/JwtService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/JWT/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Repository/InventoryRepository.java" afterDir="false" />
+    <list default="true" id="2fadf2b7-5b84-44df-9072-5206808e06c9" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Controller/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/DTO/Request/InventoryRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/DTO/Response/ErrorResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/DTO/Response/InventoryResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Entity/Inventory.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Exception/GlobalException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Exception/InsufficientStockException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Exception/InventoryNotFoundException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Repository/InventoryRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Service/Impl/InventoryServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/inventory-service/src/main/java/com/pharma/inventory_service/Service/InventoryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/medicine-service/src/test/java/com/pharma/medicine_service/Service/MedicineServiceImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/JWT/Service/JwtService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/JWT/Service/JwtService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/Service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/java/com/pharma/auth_service/Service/AuthService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/auth-service/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medicine-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Controller/MedicineController.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Controller/MedicineController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/MedicineRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Request/MedicineRequest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/MedicineResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/DTO/Response/MedicineResponse.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Medicine.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Entity/Medicine.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/Impl/MedicineServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/java/com/pharma/medicine_service/Service/Impl/MedicineServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/medicine-service/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/medicine-service/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Record" />
-        <option value="Interface" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -56,34 +53,37 @@
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 0
 }</component>
-  <component name="ProjectId" id="3FCKrOtqu0YwcuxRDVDAxuADD2d" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="3FPm99hm3lTArifrBDKhEeiY0ew" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ApiGatewayApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.AuthServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Application.MedicineServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ApiGatewayApplication.executor": "Run",
+    "Application.AuthServiceApplication.executor": "Run",
+    "Application.InventoryServiceApplication.executor": "Run",
+    "Application.MedicineServiceApplication.executor": "Run",
+    "Application.PharmaDiscoveryServerApplication.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\kamal\OneDrive\Desktop\Ai-Enabled-Senior-java-developer\pharmacy-microservices\medicine-service\src\main\java\com\pharma\medicine_service" />
+    </key>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="716b6083-2d29-4a74-896b-3e65779da41a" name="Changes" comment="" />
-      <created>1781573810702</created>
+      <changelist id="2fadf2b7-5b84-44df-9072-5206808e06c9" name="Changes" comment="" />
+      <created>1781984926634</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1781573810702</updated>
+      <updated>1781984926634</updated>
     </task>
     <servers />
   </component>
