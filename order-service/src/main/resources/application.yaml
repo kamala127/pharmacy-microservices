@@ -1,0 +1,59 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: order-service
+
+  datasource:
+    url: jdbc:mysql://localhost:3307/pharma_order_db
+    username: app
+    password: app
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+eureka:
+  instance:
+    hostname: localhost
+    prefer-ip-address: true
+
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      inventory-service:
+        failure-rate-threshold: 50
+        minimum-number-of-calls: 5
+        sliding-window-size: 10
+        wait-duration-in-open-state: 20s
+        permitted-number-of-calls-in-half-open-state: 3
+  retry:
+    instances:
+      inventoryRetry:
+        max-attempts: 3
+        wait-duration: 2s
+        enable-exponential-backoff: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,circuitbreakers
+  tracing:
+    sampling:
+      probability: 1.0
+
+    zipkin:
+      tracing:
+        endpoint: http://localhost:9411/api/v2/spans
+
+jwt:
+  secret: TXlTdXBlclNlY3JldEtleUZvckpXVFRva2VuR2VuZXJhdGlvbjEyMzQ1Njc4OTA=
+  expiration: 86400000
